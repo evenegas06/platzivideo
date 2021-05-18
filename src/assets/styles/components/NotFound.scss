@@ -1,0 +1,63 @@
+//@import "../../static/calabozo-c.svg";
+
+.xD {
+    // background-image: url("../../static/calabozo-c.svg");
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+
+    padding: 0;
+    margin: 0;
+}
+
+.notFound {
+    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.notFound img {
+    height: 250px;
+   
+}
+
+.notFound a {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: black;
+}
+
+.notFound a:hover {
+    text-decoration: underline;
+}
+
+.notFound h2, a {
+    text-align: center;
+    color: white;
+}
+
+.slidein {
+    animation-duration: 4s;
+    animation-name: slidein;
+    animation-direction: normal;
+  }
+  
+@keyframes slidein {
+    from {
+        position: relative;
+        bottom: -100px;
+        opacity: 0;
+    }
+
+    to {
+        position: relative;
+        bottom: 0;
+        opacity: 1;
+    }
+}

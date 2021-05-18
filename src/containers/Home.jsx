@@ -40,7 +40,7 @@ const Home = () => {
             <Categories title="Originales de PlatziVideo">
                 <Carousel>
                     {initialState.originals.map(item => 
-                                <CarouselItem key={item.id} {...item}/>
+                        <CarouselItem key={item.id} {...item}/>
                     )}
                 </Carousel>
             </Categories>
