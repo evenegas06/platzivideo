@@ -15,8 +15,7 @@ const Home = () => {
     //console.log(videos);
     const initialState = useInitialState(API);
     return initialState.length === 0 ? <h1>Loading...</h1> : (
-        <div className="App">
-            <Header />
+        <React.Fragment>
             <Search />
             {initialState.mylist.length > 0 &&
                 <Categories title="Mi lista">
@@ -44,9 +43,7 @@ const Home = () => {
                     )}
                 </Carousel>
             </Categories>
-
-            <Footer />
-        </div>
+        </React.Fragment>
     );
 };
 
