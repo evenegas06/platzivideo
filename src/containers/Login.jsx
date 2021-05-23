@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
@@ -6,13 +6,43 @@ import '../assets/styles/components/Login.scss';
 
 
 const Login = () => {
+
+    const [form, setValues] = useState({
+        email: '',
+    }); 
+    
+    const handleInput = (event) => {
+        setValues({
+            ...form,
+            [event.target.name]: event.target.value
+        });
+    };
+
+    const handleSubmit = (event) => {
+        // evitar el comportamiento por default de html de enviar la información por url
+        event.preventDefault();
+        console.log(form);
+    };
+
     return (
         <section className="login">
             <section className="login__container">
                 <h2 tabIndex="0">Inicia Sesión</h2>
-                <form className="login__container--form" action="">
-                    <input aria-label="Correo" className="input-sesion" placeholder="Correo" type="text" />
-                    <input aria-label="Contraseña" className="input-sesion" placeholder="Contraseña" type="text" />
+                <form className="login__container--form" action="" onSubmit={handleSubmit}>
+                    <input className="input-sesion" 
+                        name="email"
+                        type="text" 
+                        placeholder="Correo" 
+                        aria-label="Correo"
+                        onChange={handleInput}
+                    />
+                    <input className="input-sesion" 
+                        name="password"
+                        placeholder="Contraseña" 
+                        type="password" 
+                        aria-label="Contraseña"
+                        onChange={handleInput}
+                    />
                     <button className="button-sesion">Iniciar sesión</button>
                     <div className="login__container--remember-me">
                         <label>
