@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Mulish:wght@200;300&display=swap);
 .main{display:flex;align-items:center;justify-content:center;flex-direction:column;height:300px;border-radius:0px 0px 40px 40px}.main__title{color:white;font-size:25px}.input{background-color:rgba(255,255,255,0.1);border:2px solid white;border-radius:25px;color:white;font-family:'Mulish', sans-serif;font-size:16px;height:50px;padding:0px 20px;width:70%;outline:none}::placeholder{color:white}
 
-.categories__title{color:white;font-size:16px;position:absolute;padding-left:30px;width:90%}
+.categories__title{color:white;font-size:18px;position:relative;padding-left:30px;width:90%}
 
 .carousel{width:100%;overflow:scroll;position:relative}.carousel::-webkit-scrollbar{display:none}.carousel::-webkit-scrollbar-thumb{background-color:white}.carousel__container{transition:450ms -webkit-transform;transition:450ms transform;transition:450ms transform, 450ms -webkit-transform;font-size:0;white-space:nowrap;margin:70px 0px;padding-bottom:10px;padding-left:30px}.carousel-container:hover .carousel-item{opacity:0.3}.carousel__container:hover .carousel-item:hover{transform:scale(1.5);opacity:1}
 
