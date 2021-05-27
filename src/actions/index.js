@@ -38,3 +38,10 @@ export const registerRequest = (payload) => {
         payload,
     };
 };
+
+export const getVideoSource = (payload) => {
+    return {
+        type: 'GET_VIDEO_SOURCE',
+        payload,
+    };
+};
