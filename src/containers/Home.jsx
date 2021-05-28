@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
@@ -15,6 +17,7 @@ const Home = ({ mylist, trends, originals }) => {
     // return initialState.length === 0 ? <h1>Loading...</h1> : (
         return (
         <React.Fragment>
+            <Header />
             <Search />
             {/* {initialState.mylist.length > 0 && */}
             {mylist.length > 0 &&
@@ -49,6 +52,7 @@ const Home = ({ mylist, trends, originals }) => {
                     )}
                 </Carousel>
             </Categories>
+            <Footer />
         </React.Fragment>
     );
 };

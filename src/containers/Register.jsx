@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import { connect } from 'react-redux';
 import { registerRequest } from '../actions/index.js'
 import { Link } from 'react-router-dom';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import '../assets/styles/components/Login.scss';
 
@@ -28,40 +30,44 @@ const Register = (props) => {
     };
 
     return (
-        <section className="login">
-            <section className="login__container">
-                <h2 tabIndex="0">Regístrate</h2>
-                <form className="login__container--form" action="" onSubmit={handleSubmit}>
-                    <input className="input-sesion"
-                        name="name"
-                        placeholder="Nombre" 
-                        type="text" 
-                        aria-label="Nombre" 
-                        onChange={handleInput}
-                    />
-                    <input className="input-sesion" 
-                        name="email"
-                        placeholder="Correo" 
-                        type="text" 
-                        aria-label="Correo"
-                        onChange={handleInput}
-                    />
-                    <input className="input-sesion"
-                        name="password"
-                        placeholder="Contraseña" 
-                        type="text" 
-                        aria-label="Contraseña"
-                        onChange={handleInput}
-                    />
-                    <button className="button-sesion">Registrarme</button>
-                </form>
-                <p className="login__container--register">
-                    <Link to="/login">
-                        Iniciar Sesión
-                    </Link>
-                </p>
+        <React.Fragment >
+            <Header isRegister />
+            <section className="login">
+                <section className="login__container">
+                    <h2 tabIndex="0">Regístrate</h2>
+                    <form className="login__container--form" action="" onSubmit={handleSubmit}>
+                        <input className="input-sesion"
+                            name="name"
+                            placeholder="Nombre" 
+                            type="text" 
+                            aria-label="Nombre" 
+                            onChange={handleInput}
+                        />
+                        <input className="input-sesion" 
+                            name="email"
+                            placeholder="Correo" 
+                            type="text" 
+                            aria-label="Correo"
+                            onChange={handleInput}
+                        />
+                        <input className="input-sesion"
+                            name="password"
+                            placeholder="Contraseña" 
+                            type="text" 
+                            aria-label="Contraseña"
+                            onChange={handleInput}
+                        />
+                        <button className="button-sesion">Registrarme</button>
+                    </form>
+                    <p className="login__container--register">
+                        <Link to="/login">
+                            Iniciar Sesión
+                        </Link>
+                    </p>
+                </section>
             </section>
-        </section>
+            <Footer footerRegister />
+        </React.Fragment>
     );
 };
 

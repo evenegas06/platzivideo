@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginRequest } from '../actions/index';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
@@ -32,50 +34,54 @@ const Login = (props) => {
     };
 
     return (
-        <section className="login">
-            <section className="login__container">
-                <h2 tabIndex="0">Inicia Sesión</h2>
-                <form className="login__container--form" action="" onSubmit={handleSubmit}>
-                    <input className="input-sesion" 
-                        name="email"
-                        type="text" 
-                        placeholder="Correo" 
-                        aria-label="Correo"
-                        onChange={handleInput}
-                    />
-                    <input className="input-sesion" 
-                        name="password"
-                        placeholder="Contraseña" 
-                        type="password" 
-                        aria-label="Contraseña"
-                        onChange={handleInput}
-                    />
-                    <button className="button-sesion">Iniciar sesión</button>
-                    <div className="login__container--remember-me">
-                        <label>
-                            <input aria-label="Recordar mis datos" type="checkbox" name="cbox1" id="cbox1" value="checkbox" />Recuérdame
-                        </label>
-                        <a href="/">Olvidé mi contraseña</a>
-                    </div>
-                </form>
-                <section className="login__container--social-media">
-                    <div>
-                        <img src={googleIcon} alt="Google" />
-                        Inicia sesión con Google
-                    </div>
-                    <div>
-                        <img src={twitterIcon} alt="Twitter" />
-                        Inicia sesión con Twitter
-                    </div>
+        <React.Fragment>
+            <Header isLogin />
+            <section className="login">
+                <section className="login__container">
+                    <h2 tabIndex="0">Inicia Sesión</h2>
+                    <form className="login__container--form" action="" onSubmit={handleSubmit}>
+                        <input className="input-sesion" 
+                            name="email"
+                            type="text" 
+                            placeholder="Correo" 
+                            aria-label="Correo"
+                            onChange={handleInput}
+                        />
+                        <input className="input-sesion" 
+                            name="password"
+                            placeholder="Contraseña" 
+                            type="password" 
+                            aria-label="Contraseña"
+                            onChange={handleInput}
+                        />
+                        <button className="button-sesion">Iniciar sesión</button>
+                        <div className="login__container--remember-me">
+                            <label>
+                                <input aria-label="Recordar mis datos" type="checkbox" name="cbox1" id="cbox1" value="checkbox" />Recuérdame
+                            </label>
+                            <a href="/">Olvidé mi contraseña</a>
+                        </div>
+                    </form>
+                    <section className="login__container--social-media">
+                        <div>
+                            <img src={googleIcon} alt="Google" />
+                            Inicia sesión con Google
+                        </div>
+                        <div>
+                            <img src={twitterIcon} alt="Twitter" />
+                            Inicia sesión con Twitter
+                        </div>
+                    </section>
+                    <p className="login__container--register">
+                        No tienes ninguna cuenta {' '} 
+                        <Link to="/register">
+                            Regístrate
+                        </Link>
+                    </p>
                 </section>
-                <p className="login__container--register">
-                    No tienes ninguna cuenta 
-                    <Link to="/register">
-                        Regístrate
-                    </Link>
-                </p>
             </section>
-        </section>
+            <Footer footerLogin />
+        </React.Fragment>
     );
 };
 

@@ -7,18 +7,25 @@ import { logoutRequest } from '../actions/index.js'; // action encargado de cerr
 import '../assets/styles/components/Header.scss';
 import logo from '../assets/static/logo-platzivideo.png';
 import userIcon from '../assets/static/user-icon.png';
+import classNames from 'classnames';
 
 const Header = (props) => {
 
-    const { user } = props; // destructurar para usar user en lugar de props.user
+    const { user, isLogin, isRegister, bgDefault} = props; // destructurar para usar user en lugar de props.user
     const hasUser = Object.keys(user).length > 0; // validación
 
     const handleLogout = () => {
         props.logoutRequest({}); // manda payload, que en este caso es un objeto vacio
     };
 
+    const headerClass = classNames('header', {
+        isLogin,
+        isRegister,
+        bgDefault,
+    });
+
     return (
-        <header className="header">
+        <header className={headerClass}>
             <Link to="/">
                 <img tabIndex="0" className="header__img" src={logo} alt="Logo PlatziVideo" />
             </Link>
